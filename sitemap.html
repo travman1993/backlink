@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap - Digital Hub</title>
+    <meta name="description" content="Sitemap for Digital Hub. Navigate to all pages and tools.">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0a0e27;
+            --bg-darker: #050810;
+            --bg-card: #1a1f3a;
+            --grey-light: #d0d0d0;
+            --grey-mid: #888888;
+            --grey-dark: #444444;
+            --neon-blue: #00d9ff;
+            --neon-blue-glow: #00b8cc;
+            --accent-purple: #7d2be8;
+            --border-color: #2a2f4a;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Space Mono', monospace;
+            background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 50%, #0f1428 100%);
+            color: var(--grey-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(0deg, transparent 24%, rgba(0, 217, 255, .05) 25%, rgba(0, 217, 255, .05) 26%, transparent 27%, transparent 74%, rgba(0, 217, 255, .05) 75%, rgba(0, 217, 255, .05) 76%, transparent 77%, transparent),
+                linear-gradient(90deg, transparent 24%, rgba(0, 217, 255, .05) 25%, rgba(0, 217, 255, .05) 26%, transparent 27%, transparent 74%, rgba(0, 217, 255, .05) 75%, rgba(0, 217, 255, .05) 76%, transparent 77%, transparent);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            padding: 40px 20px;
+            border-bottom: 2px solid var(--border-color);
+            background: linear-gradient(180deg, rgba(10, 14, 39, 0.8) 0%, rgba(26, 31, 58, 0.4) 100%);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--neon-blue) 0%, var(--accent-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .breadcrumb {
+            color: var(--grey-mid);
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        .breadcrumb a {
+            color: var(--neon-blue);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .intro p {
+            color: var(--grey-mid);
+            margin-bottom: 20px;
+        }
+
+        .sitemap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .sitemap-section {
+            background: linear-gradient(135deg, var(--bg-card) 0%, rgba(26, 31, 58, 0.6) 100%);
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .sitemap-section:hover {
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 15px rgba(0, 217, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .sitemap-section h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            color: var(--neon-blue);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .sitemap-section ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sitemap-section li {
+            margin-bottom: 12px;
+        }
+
+        .sitemap-section a {
+            color: var(--grey-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sitemap-section a::before {
+            content: '→';
+            color: var(--neon-blue);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .sitemap-section a:hover {
+            color: var(--neon-blue);
+            padding-left: 10px;
+        }
+
+        .sitemap-section a:hover::before {
+            opacity: 1;
+        }
+
+        footer {
+            border-top: 2px solid var(--border-color);
+            padding: 40px 20px;
+            background: rgba(10, 14, 39, 0.9);
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .footer-bottom {
+            color: var(--grey-mid);
+            font-size: 0.85rem;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--neon-blue);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--neon-blue);
+            border: 2px solid var(--neon-blue);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 100;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+        }
+
+        .back-to-top:hover {
+            box-shadow: 0 0 20px rgba(0, 217, 255, 0.8);
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .sitemap-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+        <header>
+            <h1>Sitemap</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> / Sitemap
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="intro">
+                <p>Navigate all pages and tools across Digital Hub</p>
+            </div>
+
+            <div class="sitemap-grid">
+                <!-- Main Pages -->
+                <div class="sitemap-section">
+                    <h3>🏠 Main Pages</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="sitemap.html">Sitemap</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal & Policy -->
+                <div class="sitemap-section">
+                    <h3>⚖️ Legal & Policy</h3>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="cookies.html">Cookie Policy</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+
+                <!-- Calculator Tools -->
+                <div class="sitemap-section">
+                    <h3>💰 Calculator Tools</h3>
+                    <ul>
+                        <li><a href="#">What do I Tip?</a></li>
+                        <li><a href="#">Fair Split</a></li>
+                        <li><a href="#">Gas Efficiency Planner</a></li>
+                        <li><a href="#">Paycheck Clarity</a></li>
+                    </ul>
+                </div>
+
+                <!-- Recipe Websites -->
+                <div class="sitemap-section">
+                    <h3>🍳 Recipe Websites</h3>
+                    <ul>
+                        <li><a href="#">Saltwise Kitchen</a></li>
+                        <li><a href="#">Vegan Soul Food Kitchen</a></li>
+                    </ul>
+                </div>
+
+                <!-- Health & Lifestyle -->
+                <div class="sitemap-section">
+                    <h3>💪 Health & Lifestyle</h3>
+                    <ul>
+                        <li><a href="https://fitiqhub.com">FitIQHub</a></li>
+                        <li><a href="#">Movie Picker</a></li>
+                        <li><a href="https://prayer-life.com">Lifted</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div class="sitemap-section">
+                    <h3>📚 Resources</h3>
+                    <ul>
+                        <li><a href="#">Blog & Articles</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Support Center</a></li>
+                        <li><a href="contact.html">Get Support</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Additional Info -->
+            <div style="background: linear-gradient(135deg, var(--bg-card) 0%, rgba(26, 31, 58, 0.6) 100%); border: 1px solid var(--border-color); padding: 25px; border-radius: 8px; margin-bottom: 40px;">
+                <h3 style="font-family: 'Orbitron', sans-serif; color: var(--neon-blue); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">📋 Website Structure</h3>
+                <p style="margin-bottom: 15px;">Digital Hub operates 9 interconnected websites, each serving a specific purpose:</p>
+                <ul style="margin-left: 20px; margin-bottom: 15px;">
+                    <li><strong>What do I Tip:</strong> Tip calculator with payment decision game</li>
+                    <li><strong>Movie Picker:</strong> Random movie and snack recommendations</li>
+                    <li><strong>Gas Efficiency Planner:</strong> Fuel cost calculator for trips</li>
+                    <li><strong>Saltwise Kitchen:</strong> Low sodium, gluten-free recipes</li>
+                    <li><strong>Vegan Soul Food Kitchen:</strong> Plant-based soul food recipes</li>
+                    <li><strong>FitIQHub:</strong> Fitness blog and health tools</li>
+                    <li><strong>Lifted:</strong> Anonymous prayers and spiritual community</li>
+                    <li><strong>Paycheck Clarity:</strong> Net income calculator</li>
+                    <li><strong>Fair Split:</strong> Bill splitting calculator with tips</li>
+                </ul>
+            </div>
+
+            <!-- Search Functionality Info -->
+            <div style="background: linear-gradient(135deg, rgba(125, 43, 232, 0.1) 0%, rgba(0, 217, 255, 0.05) 100%); border-left: 4px solid var(--neon-blue); padding: 20px; border-radius: 4px;">
+                <p><strong>🔍 Can't find what you're looking for?</strong></p>
+                <p style="margin-top: 10px;">Use our <a href="contact.html" style="color: var(--neon-blue); text-decoration: none; font-weight: bold;">contact form →</a> to reach out with any questions or feedback. You can also browse our <a href="about.html" style="color: var(--neon-blue); text-decoration: none; font-weight: bold;">About page →</a> to learn more about each tool.</p>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="cookies.html">Cookies</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Digital Hub. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <div class="back-to-top" id="backToTop">↑</div>
+
+    <script>
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

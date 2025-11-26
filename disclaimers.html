@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disclaimer - Digital Hub</title>
+    <meta name="description" content="Disclaimer for Digital Hub. Important information about tool accuracy and limitations.">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0a0e27;
+            --bg-darker: #050810;
+            --bg-card: #1a1f3a;
+            --grey-light: #d0d0d0;
+            --grey-mid: #888888;
+            --grey-dark: #444444;
+            --neon-blue: #00d9ff;
+            --neon-blue-glow: #00b8cc;
+            --accent-purple: #7d2be8;
+            --border-color: #2a2f4a;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Space Mono', monospace;
+            background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 50%, #0f1428 100%);
+            color: var(--grey-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(0deg, transparent 24%, rgba(0, 217, 255, .05) 25%, rgba(0, 217, 255, .05) 26%, transparent 27%, transparent 74%, rgba(0, 217, 255, .05) 75%, rgba(0, 217, 255, .05) 76%, transparent 77%, transparent),
+                linear-gradient(90deg, transparent 24%, rgba(0, 217, 255, .05) 25%, rgba(0, 217, 255, .05) 26%, transparent 27%, transparent 74%, rgba(0, 217, 255, .05) 75%, rgba(0, 217, 255, .05) 76%, transparent 77%, transparent);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            padding: 40px 20px;
+            border-bottom: 2px solid var(--border-color);
+            background: linear-gradient(180deg, rgba(10, 14, 39, 0.8) 0%, rgba(26, 31, 58, 0.4) 100%);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--neon-blue) 0%, var(--accent-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .breadcrumb {
+            color: var(--grey-mid);
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        .breadcrumb a {
+            color: var(--neon-blue);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.6rem;
+            color: var(--neon-blue);
+            margin-top: 40px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            color: var(--neon-blue);
+            margin-top: 25px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            color: var(--grey-light);
+        }
+
+        strong {
+            color: var(--neon-blue);
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: var(--grey-light);
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--bg-card) 0%, rgba(26, 31, 58, 0.3) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        .section h3 {
+            margin-top: 0;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255, 100, 0, 0.15) 0%, rgba(255, 50, 0, 0.05) 100%);
+            border-left: 4px solid #ff6400;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .highlight-box strong {
+            color: #ff8800;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, rgba(255, 200, 0, 0.15) 0%, rgba(255, 150, 0, 0.05) 100%);
+            border-left: 4px solid #ffcc00;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .warning-box strong {
+            color: #ffdd00;
+        }
+
+        footer {
+            border-top: 2px solid var(--border-color);
+            padding: 40px 20px;
+            background: rgba(10, 14, 39, 0.9);
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .footer-bottom {
+            color: var(--grey-mid);
+            font-size: 0.85rem;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--neon-blue);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--neon-blue);
+            border: 2px solid var(--neon-blue);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 100;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+        }
+
+        .back-to-top:hover {
+            box-shadow: 0 0 20px rgba(0, 217, 255, 0.8);
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+        <header>
+            <h1>Disclaimer</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> / Disclaimer
+            </div>
+        </header>
+
+        <div class="container">
+            <section>
+                <h2>General Disclaimer</h2>
+                <div class="section">
+                    <p>This Disclaimer applies to all Digital Hub websites, tools, calculators, content, and services. Please read it carefully before using any of our tools.</p>
+                </div>
+            </section>
+
+            <div class="highlight-box">
+                <strong>⚠️ IMPORTANT:</strong> Digital Hub tools and content are provided for informational and educational purposes only. They are not a substitute for professional advice from qualified experts.
+            </div>
+
+            <section>
+                <h2>1. No Professional Advice</h2>
+                <div class="section">
+                    <p>Digital Hub provides tools and information in good faith, but <strong>does not provide professional advice.</strong> This includes but is not limited to:</p>
+                    <ul>
+                        <li><strong>Financial Advice:</strong> Our calculators (tip, bill split, paycheck, gas efficiency) are estimates only and should not be relied upon for financial decisions. Consult a financial advisor or accountant for personalized advice.</li>
+                        <li><strong>Medical/Health Advice:</strong> Our fitness and recipe content is educational. Always consult healthcare professionals before starting new diet or exercise programs.</li>
+                        <li><strong>Legal Advice:</strong> Nothing on our site constitutes legal advice. Consult a lawyer for legal matters.</li>
+                        <li><strong>Nutritional Advice:</strong> Recipe information is general guidance. Consult nutritionists for dietary concerns or restrictions.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>2. Accuracy of Calculations</h2>
+                <div class="section">
+                    <p>While we strive to provide accurate tools, we cannot guarantee 100% accuracy. Our calculators:</p>
+                    <ul>
+                        <li>Provide <strong>estimates</strong> based on standard formulas and assumptions</li>
+                        <li>May have rounding differences</li>
+                        <li>May not account for all variables or special circumstances</li>
+                        <li>Should be verified with professional tools or advisors</li>
+                    </ul>
+                    <p><strong>Examples of potential variations:</strong></p>
+                    <ul>
+                        <li>Tax calculations may vary by jurisdiction and personal situation</li>
+                        <li>Gas prices fluctuate and vary by location</li>
+                        <li>Tip percentages are customizable but may not reflect all expectations</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>3. Recipe and Dietary Information</h2>
+                <div class="section">
+                    <p>Our recipe websites provide general culinary and nutritional information. We disclaim:</p>
+                    <ul>
+                        <li><strong>Nutritional Accuracy:</strong> Nutritional values are estimates and may vary based on ingredients used and preparation methods</li>
+                        <li><strong>Allergen Warnings:</strong> While we try to be thorough, cross-contamination and ingredient variations can occur. Always check ingredient labels.</li>
+                        <li><strong>Dietary Suitability:</strong> Consult healthcare professionals about suitability for your specific dietary needs</li>
+                        <li><strong>Food Safety:</strong> Follow proper food handling and safety guidelines when preparing recipes</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>4. Fitness and Health Content</h2>
+                <div class="section">
+                    <p>FitIQHub provides fitness and health information for educational purposes only. <strong>Always consult with healthcare professionals</strong> before:</p>
+                    <ul>
+                        <li>Starting a new exercise program</li>
+                        <li>Changing your diet significantly</li>
+                        <li>Using supplements or new health products</li>
+                        <li>If you have pre-existing health conditions</li>
+                    </ul>
+                    <p><strong>Individuals with medical conditions</strong> should seek professional medical advice before making changes to diet or exercise routines.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>5. Spiritual Content Disclaimer</h2>
+                <div class="section">
+                    <p>Lifted provides a platform for sharing prayers and spiritual reflections. We disclaim:</p>
+                    <ul>
+                        <li>No endorsement of specific religious or spiritual beliefs</li>
+                        <li>Content is user-generated and reflects individual perspectives</li>
+                        <li>Digital Hub is not a substitute for spiritual counseling or mental health services</li>
+                        <li>If struggling with mental health, please reach out to a qualified professional</li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="warning-box">
+                <strong>🚨 Mental Health Crisis:</strong> If you are experiencing a mental health crisis, please contact emergency services or a crisis hotline immediately. Digital Hub is not a mental health service.
+            </div>
+
+            <section>
+                <h2>6. Third-Party Content</h2>
+                <div class="section">
+                    <p>Our websites may contain links to or embed content from third-party sources. Digital Hub:</p>
+                    <ul>
+                        <li>Does not endorse or control third-party content</li>
+                        <li>Is not responsible for accuracy, availability, or security of external content</li>
+                        <li>Does not guarantee external links remain active or unchanged</li>
+                        <li>Recommends reviewing third-party terms and privacy policies</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>7. User-Generated Content</h2>
+                <div class="section">
+                    <p>Where we allow user-generated content (such as prayers on Lifted), we disclaim responsibility for:</p>
+                    <ul>
+                        <li>Content accuracy or appropriateness</li>
+                        <li>Offensive or harmful user submissions</li>
+                        <li>Violations of intellectual property rights by users</li>
+                        <li>Any damages resulting from user-generated content</li>
+                    </ul>
+                    <p>We reserve the right to moderate, edit, or remove inappropriate content.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>8. Limitation of Liability</h2>
+                <div class="section">
+                    <p><strong>To the maximum extent permitted by law,</strong> Digital Hub shall not be liable for:</p>
+                    <ul>
+                        <li>Direct, indirect, incidental, special, or consequential damages</li>
+                        <li>Loss of profits, revenue, data, or opportunities</li>
+                        <li>Business interruption or loss of use</li>
+                        <li>Any damages arising from reliance on our tools or content</li>
+                        <li>Errors in calculations or content</li>
+                        <li>Issues arising from third-party services</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>9. Assumption of Risk</h2>
+                <div class="section">
+                    <p>By using Digital Hub, you acknowledge and assume:</p>
+                    <ul>
+                        <li><strong>You understand</strong> tools are estimates and educational only</li>
+                        <li><strong>You will verify</strong> critical information with professionals</li>
+                        <li><strong>You accept responsibility</strong> for decisions made based on our tools</li>
+                        <li><strong>You will not rely solely</strong> on Digital Hub for important decisions</li>
+                        <li><strong>You understand risks</strong> associated with financial, health, and dietary decisions</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>10. Service Availability</h2>
+                <div class="section">
+                    <p>Digital Hub is provided "as is" and "as available." We disclaim:</p>
+                    <ul>
+                        <li>Guarantees that services will be uninterrupted or error-free</li>
+                        <li>Warranties regarding uptime or availability</li>
+                        <li>Responsibility for temporary outages or maintenance</li>
+                        <li>Liability for data loss or system failures</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>11. Geographic Limitations</h2>
+                <div class="section">
+                    <p>Our tools and content:</p>
+                    <ul>
+                        <li>May be tailored to specific locations (US tax rates, regulations, etc.)</li>
+                        <li>May not apply to your jurisdiction</li>
+                        <li>Should not be relied upon for international or location-specific matters</li>
+                        <li>Vary by region (gas prices, tax rates, cost of living, etc.)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>12. Changes to This Disclaimer</h2>
+                <div class="section">
+                    <p>Digital Hub may update this Disclaimer at any time without notice. Your continued use constitutes acceptance of any changes.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>13. Your Acknowledgment</h2>
+                <div class="section">
+                    <p>By using Digital Hub, you acknowledge that you:</p>
+                    <ul>
+                        <li>Have read and understand this Disclaimer</li>
+                        <li>Accept responsibility for your use of our tools and content</li>
+                        <li>Understand tools are educational and estimates only</li>
+                        <li>Will consult professionals for important decisions</li>
+                        <li>Will not hold Digital Hub liable for decisions made using our tools</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>14. Questions About This Disclaimer</h2>
+                <div class="section">
+                    <p>If you have questions about this Disclaimer:</p>
+                    <ul>
+                        <li><strong>Email:</strong> <a href="mailto:legal@digitalhub.com" style="color: var(--neon-blue);">legal@digitalhub.com</a></li>
+                        <li><strong>Contact Form:</strong> <a href="contact.html" style="color: var(--neon-blue);">Use our contact page</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="highlight-box">
+                <strong>⚖️ FINAL NOTICE:</strong> This Disclaimer is binding and governs your use of Digital Hub. If you do not agree with these terms, you should not use our services. For professional advice on financial, legal, medical, or nutritional matters, please consult with qualified professionals.
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="cookies.html">Cookies</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Digital Hub. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <div class="back-to-top" id="backToTop">↑</div>
+
+    <script>
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Policy - Digital Hub</title>
+    <meta name="description" content="Cookie Policy for Digital Hub. Learn how we use cookies and how to manage your cookie preferences.">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0a0e27;
+            --bg-darker: #050810;
+            --bg-card: #1a1f3a;
+            --grey-light: #d0d0d0;
+            --grey-mid: #888888;
+            --grey-dark: #444444;
+            --neon-blue: #00d9ff;
+            --neon-blue-glow: #00b8cc;
+            --accent-purple: #7d2be8;
+            --border-color: #2a2f4a;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Space Mono', monospace;
+            background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 50%, #0f1428 100%);
+            color: var(--grey-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(0deg, transparent 24%, rgba(0, 217, 255, .05) 25%, rgba(0, 217, 255, .05) 26%, transparent 27%, transparent 74%, rgba(0, 217, 255, .05) 75%, rgba(0, 217, 255, .05) 76%, transparent 77%, transparent),
+                linear-gradient(90deg, transparent 24%, rgba(0, 217, 255, .05) 25%, rgba(0, 217, 255, .05) 26%, transparent 27%, transparent 74%, rgba(0, 217, 255, .05) 75%, rgba(0, 217, 255, .05) 76%, transparent 77%, transparent);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            padding: 40px 20px;
+            border-bottom: 2px solid var(--border-color);
+            background: linear-gradient(180deg, rgba(10, 14, 39, 0.8) 0%, rgba(26, 31, 58, 0.4) 100%);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--neon-blue) 0%, var(--accent-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .breadcrumb {
+            color: var(--grey-mid);
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        .breadcrumb a {
+            color: var(--neon-blue);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .last-updated {
+            text-align: center;
+            color: var(--grey-mid);
+            margin-bottom: 40px;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--bg-card) 0%, rgba(26, 31, 58, 0.6) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.6rem;
+            color: var(--neon-blue);
+            margin-top: 40px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            color: var(--neon-blue);
+            margin-top: 25px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            color: var(--grey-light);
+        }
+
+        strong {
+            color: var(--neon-blue);
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: var(--grey-light);
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--bg-card) 0%, rgba(26, 31, 58, 0.3) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        .section h3 {
+            margin-top: 0;
+        }
+
+        .cookie-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: rgba(10, 14, 39, 0.5);
+        }
+
+        .cookie-table th {
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.2) 0%, rgba(125, 43, 232, 0.1) 100%);
+            color: var(--neon-blue);
+            padding: 15px;
+            text-align: left;
+            border: 1px solid var(--border-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .cookie-table td {
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            color: var(--grey-light);
+            font-size: 0.9rem;
+        }
+
+        .cookie-table tr:hover {
+            background: rgba(0, 217, 255, 0.05);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(125, 43, 232, 0.1) 0%, rgba(0, 217, 255, 0.05) 100%);
+            border-left: 4px solid var(--neon-blue);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .toggle-section {
+            margin: 20px 0;
+        }
+
+        .toggle-button {
+            background: linear-gradient(135deg, var(--bg-card) 0%, rgba(26, 31, 58, 0.6) 100%);
+            border: 1px solid var(--border-color);
+            color: var(--neon-blue);
+            padding: 15px;
+            font-family: 'Space Mono', monospace;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .toggle-button:hover {
+            background: linear-gradient(135deg, var(--bg-card) 0%, rgba(26, 31, 58, 0.8) 100%);
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 15px rgba(0, 217, 255, 0.2);
+        }
+
+        .toggle-button::after {
+            content: '▼';
+            float: right;
+            transition: transform 0.3s ease;
+        }
+
+        .toggle-button.active::after {
+            transform: rotate(180deg);
+        }
+
+        .toggle-content {
+            display: none;
+            padding: 20px;
+            background: rgba(10, 14, 39, 0.3);
+            border: 1px solid var(--border-color);
+            border-top: none;
+        }
+
+        .toggle-content.active {
+            display: block;
+        }
+
+        footer {
+            border-top: 2px solid var(--border-color);
+            padding: 40px 20px;
+            background: rgba(10, 14, 39, 0.9);
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .footer-bottom {
+            color: var(--grey-mid);
+            font-size: 0.85rem;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--neon-blue);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--neon-blue);
+            border: 2px solid var(--neon-blue);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 100;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+        }
+
+        .back-to-top:hover {
+            box-shadow: 0 0 20px rgba(0, 217, 255, 0.8);
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            .cookie-table {
+                font-size: 0.85rem;
+            }
+
+            .cookie-table td,
+            .cookie-table th {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+        <header>
+            <h1>Cookie Policy</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> / Cookie Policy
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="last-updated">
+                <p><strong>Last Updated: January 2024</strong></p>
+                <p>This Cookie Policy explains how Digital Hub uses cookies and similar technologies.</p>
+            </div>
+
+            <section>
+                <h2>1. What are Cookies?</h2>
+                <div class="section">
+                    <p>Cookies are small text files placed on your device (computer, tablet, or mobile phone) when you visit a website. They are widely used to make websites work more efficiently, to provide information to the website owners, and to enhance your user experience.</p>
+                    <p>A cookie will typically contain the name of the domain from which the cookie has come, the "lifetime" of the cookie, and a value (usually a randomly generated unique number).</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>2. Why We Use Cookies</h2>
+                <div class="section">
+                    <p>Digital Hub uses cookies for several important purposes:</p>
+                    <ul>
+                        <li><strong>Site Functionality:</strong> To remember your preferences and settings</li>
+                        <li><strong>Performance:</strong> To analyze how visitors interact with our sites</li>
+                        <li><strong>Analytics:</strong> To understand usage patterns and improve our tools</li>
+                        <li><strong>Security:</strong> To protect against fraud and enhance security</li>
+                        <li><strong>Advertising:</strong> To provide relevant content (if applicable)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>3. Types of Cookies We Use</h2>
+                
+                <button class="toggle-button" onclick="toggleSection(this)">
+                    Essential Cookies ⭐
+                </button>
+                <div class="toggle-content">
+                    <p><strong>These cookies are necessary for the website to function properly.</strong></p>
+                    <table class="cookie-table">
+                        <tr>
+                            <th>Cookie Name</th>
+                            <th>Purpose</th>
+                            <th>Duration</th>
+                        </tr>
+                        <tr>
+                            <td>session_id</td>
+                            <td>Maintains your session for security</td>
+                            <td>Session (until browser closes)</td>
+                        </tr>
+                        <tr>
+                            <td>preferences</td>
+                            <td>Remembers your site preferences</td>
+                            <td>1 year</td>
+                        </tr>
+                        <tr>
+                            <td>security_token</td>
+                            <td>Protects against CSRF attacks</td>
+                            <td>Session</td>
+                        </tr>
+                    </table>
+                    <p style="margin-top: 15px;"><strong>🔒 You cannot disable essential cookies.</strong> They are required for the website to function.</p>
+                </div>
+
+                <button class="toggle-button" onclick="toggleSection(this)">
+                    Performance Cookies 📊
+                </button>
+                <div class="toggle-content">
+                    <p><strong>These cookies collect information about how you interact with our website.</strong></p>
+                    <table class="cookie-table">
+                        <tr>
+                            <th>Cookie Name</th>
+                            <th>Purpose</th>
+                            <th>Duration</th>
+                        </tr>
+                        <tr>
+                            <td>_ga</td>
+                            <td>Google Analytics - tracks page views</td>
+                            <td>2 years</td>
+                        </tr>
+                        <tr>
+                            <td>_gid</td>
+                            <td>Google Analytics - distinguishes users</td>
+                            <td>24 hours</td>
+                        </tr>
+                        <tr>
+                            <td>_gat</td>
+                            <td>Google Analytics - rate limiting</td>
+                            <td>1 minute</td>
+                        </tr>
+                        <tr>
+                            <td>performance_metrics</td>
+                            <td>Tracks site performance and speed</td>
+                            <td>30 days</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <button class="toggle-button" onclick="toggleSection(this)">
+                    Functional Cookies 🎯
+                </button>
+                <div class="toggle-content">
+                    <p><strong>These cookies enable enhanced functionality and personalization.</strong></p>
+                    <table class="cookie-table">
+                        <tr>
+                            <th>Cookie Name</th>
+                            <th>Purpose</th>
+                            <th>Duration</th>
+                        </tr>
+                        <tr>
+                            <td>theme_preference</td>
+                            <td>Remembers your theme choice</td>
+                            <td>1 year</td>
+                        </tr>
+                        <tr>
+                            <td>language</td>
+                            <td>Remembers your language preference</td>
+                            <td>1 year</td>
+                        </tr>
+                        <tr>
+                            <td>recent_searches</td>
+                            <td>Keeps track of recent tool usage</td>
+                            <td>30 days</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <button class="toggle-button" onclick="toggleSection(this)">
+                    Advertising Cookies 📢
+                </button>
+                <div class="toggle-content">
+                    <p><strong>These cookies are used to deliver relevant advertisements.</strong></p>
+                    <table class="cookie-table">
+                        <tr>
+                            <th>Cookie Name</th>
+                            <th>Purpose</th>
+                            <th>Duration</th>
+                        </tr>
+                        <tr>
+                            <td>ad_id</td>
+                            <td>Identifies advertising preferences</td>
+                            <td>2 years</td>
+                        </tr>
+                        <tr>
+                            <td>third_party_ads</td>
+                            <td>Tracks ad impressions and clicks</td>
+                            <td>Various</td>
+                        </tr>
+                        <tr>
+                            <td>remarketing</td>
+                            <td>Used for retargeting ads</td>
+                            <td>Various</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            <section>
+                <h2>4. Third-Party Cookies</h2>
+                <div class="section">
+                    <p>We allow selected third parties to place cookies on our website for analytics, advertising, and social media purposes. These third parties include:</p>
+                    <ul>
+                        <li><strong>Google Analytics:</strong> For traffic analysis and user behavior</li>
+                        <li><strong>Google Ads:</strong> For advertising and remarketing</li>
+                        <li><strong>Facebook Pixel:</strong> For social media tracking (if applicable)</li>
+                        <li><strong>Other Ad Networks:</strong> For targeted advertising</li>
+                    </ul>
+                    <p>These third parties have their own privacy policies and you should review them for more information about how they use your data.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>5. How Long Cookies Last</h2>
+                <div class="section">
+                    <ul>
+                        <li><strong>Session Cookies:</strong> Deleted when you close your browser</li>
+                        <li><strong>Persistent Cookies:</strong> Remain on your device for a set period (typically 30 days to 2 years)</li>
+                        <li><strong>First-Party Cookies:</strong> Set by Digital Hub directly</li>
+                        <li><strong>Third-Party Cookies:</strong> Set by our partners (duration varies)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>6. Similar Technologies</h2>
+                <div class="section">
+                    <p>In addition to cookies, we may use other similar tracking technologies:</p>
+                    <ul>
+                        <li><strong>Web Beacons:</strong> Tiny graphics that track page visits</li>
+                        <li><strong>Local Storage:</strong> Browser storage that persists longer than cookies</li>
+                        <li><strong>Tags/Pixels:</strong> Code snippets that track user interactions</li>
+                        <li><strong>Session Storage:</strong> Temporary storage during your visit</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>7. Your Cookie Choices</h2>
+                <div class="section">
+                    <h3>Browser Controls</h3>
+                    <p>Most web browsers allow you to control cookies through their settings. You can typically:</p>
+                    <ul>
+                        <li>View what cookies are stored</li>
+                        <li>Allow or block specific cookies</li>
+                        <li>Delete cookies when you close the browser</li>
+                        <li>Block all third-party cookies</li>
+                    </ul>
+                    <p>To learn how to manage cookies in your browser:</p>
+                    <ul>
+                        <li><strong>Chrome:</strong> chrome://settings/cookies</li>
+                        <li><strong>Firefox:</strong> Preferences → Privacy & Security → Cookies</li>
+                        <li><strong>Safari:</strong> Preferences → Privacy</li>
+                        <li><strong>Edge:</strong> Settings → Privacy → Cookies</li>
+                    </ul>
+
+                    <h3>Opting Out</h3>
+                    <p>You can opt out of analytics cookies through:</p>
+                    <ul>
+                        <li><strong>Google Analytics Opt-out:</strong> <a href="#" style="color: var(--neon-blue);">Install the Google Analytics opt-out browser add-on</a></li>
+                        <li><strong>Your Cookie Preferences:</strong> Use our cookie preference manager (if implemented)</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <strong>⚠️ Note:</strong> Disabling cookies may affect the functionality of some tools and features on our website.
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>8. Do Not Track</h2>
+                <div class="section">
+                    <p>Some browsers include a "Do Not Track" feature. Digital Hub respects Do Not Track signals, though responses vary across websites and browsers.</p>
+                    <p>To enable Do Not Track:</p>
+                    <ul>
+                        <li><strong>Chrome:</strong> Settings → Privacy → Send "Do Not Track" requests</li>
+                        <li><strong>Firefox:</strong> Preferences → Privacy → "Tell sites I do not want to be tracked"</li>
+                        <li><strong>Safari:</strong> Preferences → Privacy → "Ask websites not to track me"</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>9. Cookie Policy Changes</h2>
+                <div class="section">
+                    <p>Digital Hub may update this Cookie Policy periodically. We will notify you of significant changes by updating the "Last Updated" date at the top of this page. Your continued use of our website following changes constitutes your acceptance of the updated policy.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>10. Compliance</h2>
+                <div class="section">
+                    <p>Our cookie practices comply with:</p>
+                    <ul>
+                        <li><strong>GDPR:</strong> General Data Protection Regulation (EU)</li>
+                        <li><strong>CCPA:</strong> California Consumer Privacy Act</li>
+                        <li><strong>LGPD:</strong> Lei Geral de Proteção de Dados (Brazil)</li>
+                        <li><strong>PIPEDA:</strong> Personal Information Protection and Electronic Documents Act (Canada)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>11. Questions About Cookies</h2>
+                <div class="section">
+                    <p>If you have questions about our use of cookies or this policy:</p>
+                    <ul>
+                        <li><strong>Email:</strong> <a href="mailto:privacy@digitalhub.com" style="color: var(--neon-blue);">privacy@digitalhub.com</a></li>
+                        <li><strong>Contact Form:</strong> <a href="contact.html" style="color: var(--neon-blue);">Use our contact page</a></li>
+                        <li><strong>Privacy Policy:</strong> <a href="privacy.html" style="color: var(--neon-blue);">View our Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="highlight-box">
+                <strong>🍪 Summary:</strong> We use cookies to improve your experience, analyze site usage, and deliver relevant content. You have control over most cookies and can manage your preferences through your browser settings.
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="cookies.html">Cookies</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Digital Hub. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <div class="back-to-top" id="backToTop">↑</div>
+
+    <script>
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        function toggleSection(button) {
+            button.classList.toggle('active');
+            const content = button.nextElementSibling;
+            content.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

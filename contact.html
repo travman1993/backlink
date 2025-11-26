@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Digital Hub</title>
+    <meta name="description" content="Get in touch with Digital Hub. Send us your feedback, suggestions, or questions.">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0a0e27;
+            --bg-darker: #050810;
+            --bg-card: #1a1f3a;
+            --grey-light: #d0d0d0;
+            --grey-mid: #888888;
+            --grey-dark: #444444;
+            --neon-blue: #00d9ff;
+            --neon-blue-glow: #00b8cc;
+            --accent-purple: #7d2be8;
+            --border-color: #2a2f4a;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Space Mono', monospace;
+            background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 50%, #0f1428 100%);
+            color: var(--grey-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(0deg, transparent 24%, rgba(0, 217, 255, .05) 25%, rgba(0, 217, 255, .05) 26%, transparent 27%, transparent 74%, rgba(0, 217, 255, .05) 75%, rgba(0, 217, 255, .05) 76%, transparent 77%, transparent),
+                linear-gradient(90deg, transparent 24%, rgba(0, 217, 255, .05) 25%, rgba(0, 217, 255, .05) 26%, transparent 27%, transparent 74%, rgba(0, 217, 255, .05) 75%, rgba(0, 217, 255, .05) 76%, transparent 77%, transparent);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            padding: 40px 20px;
+            border-bottom: 2px solid var(--border-color);
+            background: linear-gradient(180deg, rgba(10, 14, 39, 0.8) 0%, rgba(26, 31, 58, 0.4) 100%);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--neon-blue) 0%, var(--accent-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .breadcrumb {
+            color: var(--grey-mid);
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        .breadcrumb a {
+            color: var(--neon-blue);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            color: var(--grey-light);
+            margin-bottom: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, var(--bg-card) 0%, rgba(26, 31, 58, 0.6) 100%);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .contact-info h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            color: var(--neon-blue);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-item {
+            margin-bottom: 30px;
+        }
+
+        .info-label {
+            color: var(--neon-blue);
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .info-content {
+            color: var(--grey-light);
+        }
+
+        .info-content a {
+            color: var(--neon-blue);
+            text-decoration: none;
+        }
+
+        .info-content a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            background: linear-gradient(135deg, var(--bg-card) 0%, rgba(26, 31, 58, 0.6) 100%);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .contact-form h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            color: var(--neon-blue);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            color: var(--neon-blue);
+            margin-bottom: 8px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(10, 14, 39, 0.5);
+            border: 1px solid var(--border-color);
+            color: var(--grey-light);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--neon-blue);
+            background: rgba(10, 14, 39, 0.8);
+            box-shadow: 0 0 15px rgba(0, 217, 255, 0.2);
+        }
+
+        input::placeholder {
+            color: var(--grey-dark);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .button {
+            background: var(--neon-blue);
+            color: var(--bg-dark);
+            border: 2px solid var(--neon-blue);
+            padding: 12px 30px;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .button:hover {
+            box-shadow: 0 0 20px rgba(0, 217, 255, 0.8);
+            transform: translateY(-2px);
+        }
+
+        .response-methods {
+            background: linear-gradient(135deg, var(--bg-card) 0%, rgba(26, 31, 58, 0.6) 100%);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+        }
+
+        .response-methods h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            color: var(--neon-blue);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .response-methods p {
+            margin-bottom: 15px;
+        }
+
+        .faq {
+            margin-top: 50px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .faq h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            color: var(--neon-blue);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .faq-item {
+            margin-bottom: 25px;
+        }
+
+        .faq-item h4 {
+            color: var(--neon-blue);
+            margin-bottom: 10px;
+            cursor: pointer;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1.1rem;
+        }
+
+        .faq-item p {
+            color: var(--grey-light);
+            display: none;
+            margin-bottom: 0;
+        }
+
+        .faq-item.active p {
+            display: block;
+        }
+
+        footer {
+            border-top: 2px solid var(--border-color);
+            padding: 40px 20px;
+            background: rgba(10, 14, 39, 0.9);
+            text-align: center;
+        }
+
+        .footer-bottom {
+            color: var(--grey-mid);
+            font-size: 0.85rem;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--neon-blue);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--neon-blue);
+            border: 2px solid var(--neon-blue);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 100;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+        }
+
+        .back-to-top:hover {
+            box-shadow: 0 0 20px rgba(0, 217, 255, 0.8);
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+        <header>
+            <h1>Contact Us</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> / Contact
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="intro">
+                <p>We'd love to hear from you! Whether you have a question, suggestion, feedback, or just want to get in touch, please use the form below or reach out to us directly.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    
+                    <div class="info-item">
+                        <div class="info-label">📧 Email</div>
+                        <div class="info-content">
+                            <a href="mailto:contact@digitalhub.com">contact@digitalhub.com</a>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-label">🌐 Website</div>
+                        <div class="info-content">
+                            <a href="index.html">digitalhub.com</a>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-label">⏱️ Response Time</div>
+                        <div class="info-content">
+                            We typically respond within 24-48 hours during business days
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-label">🛠️ Support</div>
+                        <div class="info-content">
+                            Having trouble with a tool? Let us know and we'll help you out
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-label">💡 Suggestions</div>
+                        <div class="info-content">
+                            Have an idea for a new tool? We'd love to hear it!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Send Message</h3>
+                    <form id="contactForm" name="contact" method="POST" netlify>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Your name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="your@email.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select subject...</option>
+                                <option value="bug-report">Bug Report</option>
+                                <option value="feature-request">Feature Request</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="suggestion">Tool Suggestion</option>
+                                <option value="partnership">Partnership</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required placeholder="Tell us what's on your mind..."></textarea>
+                        </div>
+
+                        <button type="submit" class="button">Send Message →</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="response-methods">
+                <h3>📋 What Happens Next?</h3>
+                <p><strong>1. Submission:</strong> Your message is securely received by our team</p>
+                <p><strong>2. Review:</strong> We review all inquiries and prioritize responses</p>
+                <p><strong>3. Reply:</strong> We'll get back to you via email within 24-48 hours</p>
+                <p><strong>4. Follow-up:</strong> For complex issues, we may ask clarifying questions</p>
+            </div>
+
+            <section class="faq">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq-item">
+                    <h4>❓ How can I report a bug?</h4>
+                    <p>Use the contact form and select "Bug Report" as the subject. Please include details about what tool had the issue, what happened, and what you expected to happen. The more detail, the better we can help!</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>❓ Can I suggest a new tool?</h4>
+                    <p>Absolutely! We love hearing ideas. Submit your suggestion through the form with "Tool Suggestion" as the subject, and explain what problem your idea would solve. We review all suggestions and may reach out with questions.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>❓ Is there a phone number I can call?</h4>
+                    <p>We primarily communicate via email to ensure timely responses and documentation of requests. Email us at contact@digitalhub.com for the fastest response.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>❓ Do you offer partnerships or sponsorships?</h4>
+                    <p>We're open to discussing partnerships, collaborations, and sponsorship opportunities. Contact us with "Partnership" as the subject line and we'll get back to you.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>❓ How do I stay updated on new tools?</h4>
+                    <p>Check back to the Digital Hub homepage regularly for new additions. You can also follow us on social media or subscribe to updates (if available).</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>❓ Are my messages private?</h4>
+                    <p>Yes, all messages are treated confidentially. We only use your information to respond to your inquiry. See our <a href="privacy.html" style="color: var(--neon-blue); text-decoration: none; font-weight: bold;">Privacy Policy</a> for more details.</p>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="cookies.html">Cookies</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Digital Hub. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <div class="back-to-top" id="backToTop">↑</div>
+
+    <script>
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-item h4').forEach(header => {
+            header.addEventListener('click', function() {
+                const item = this.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        // Form submission feedback
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            // Netlify handles the submission automatically
+        });
+    </script>
+</body>
+</html>
