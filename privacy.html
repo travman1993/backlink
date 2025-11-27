@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Digital Hub</title>
-    <meta name="description" content="Privacy Policy for Digital Hub. Learn how we protect your data and what information we collect.">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>Privacy Policy - Daily Help Hub</title>
+    <meta name="description" content="Privacy Policy for Daily Help Hub. Learn how we protect your data and what information we collect.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LZMXE42HKQ"></script>
@@ -13,7 +13,6 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-LZMXE42HKQ');
     </script>
 
@@ -25,16 +24,17 @@
         }
 
         :root {
-            --bg-dark: #040404;
-            --bg-darker: #292929;
-            --bg-card: #4c4c4c;
-            --grey-light: #d0d0d0;
-            --grey-mid: #888888;
-            --grey-dark: #444444;
-            --neon-blue: #00d9ff;
-            --neon-blue-glow: #00b8cc;
-            --accent-purple: #7d2be8;
-            --border-color: #888888;
+            --cream: #FAF8F5;
+            --warm-white: #FFFFFF;
+            --sage: #8B9D83;
+            --forest: #4A5D4F;
+            --charcoal: #2C2C2C;
+            --soft-gray: #666666;
+            --light-gray: #E8E6E3;
+            --accent-terracotta: #C87259;
+            --accent-gold: #D4A574;
+            --shadow-soft: rgba(0, 0, 0, 0.08);
+            --shadow-medium: rgba(0, 0, 0, 0.12);
         }
 
         html {
@@ -42,53 +42,40 @@
         }
 
         body {
-            font-family: 'Space Mono', monospace;
-            background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 50%, #0f1428 100%);
-            color: var(--grey-light);
-            line-height: 1.6;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        .content-wrapper {
-            position: relative;
-            z-index: 1;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--cream);
+            color: var(--charcoal);
+            line-height: 1.7;
         }
 
         header {
-            padding: 40px 20px;
-            border-bottom: 2px solid var(--border-color);
-            background: linear-gradient(180deg, rgba(10, 14, 39, 0.8) 0%, rgba(26, 31, 58, 0.4) 100%);
-            backdrop-filter: blur(10px);
-            border-radius: 0 0 15px 15px;
+            padding: 60px 20px 40px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--warm-white) 0%, var(--cream) 100%);
+            border-bottom: 1px solid var(--light-gray);
         }
 
         h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, var(--neon-blue) 0%, var(--accent-purple) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 600;
+            color: var(--forest);
+            margin-bottom: 15px;
         }
 
         .breadcrumb {
-            color: var(--grey-mid);
+            color: var(--soft-gray);
             font-size: 0.9rem;
-            margin-top: 10px;
+            margin-top: 15px;
         }
 
         .breadcrumb a {
-            color: var(--neon-blue);
+            color: var(--accent-terracotta);
             text-decoration: none;
         }
 
         .breadcrumb a:hover {
-            text-decoration: underline;
+            color: var(--forest);
         }
 
         .container {
@@ -99,106 +86,113 @@
 
         .last-updated {
             text-align: center;
-            color: var(--grey-mid);
-            margin-bottom: 40px;
-            padding: 20px;
-            background: linear-gradient(135deg, var(--bg-card) 0%, rgba(26, 31, 58, 0.6) 100%);
-            border: 1px solid var(--border-color);
+            color: var(--soft-gray);
+            margin-bottom: 50px;
+            padding: 30px;
+            background: var(--warm-white);
             border-radius: 8px;
+            box-shadow: 0 2px 10px var(--shadow-soft);
         }
 
         h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.6rem;
-            color: var(--neon-blue);
-            margin-top: 40px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--forest);
+            margin-top: 50px;
+            margin-bottom: 25px;
+            font-weight: 600;
         }
 
         h3 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.2rem;
-            color: var(--neon-blue);
-            margin-top: 25px;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--forest);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 600;
         }
 
         p {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             line-height: 1.8;
-            color: var(--grey-light);
         }
 
         strong {
-            color: var(--neon-blue);
+            color: var(--forest);
+            font-weight: 600;
         }
 
         ul {
-            margin-left: 20px;
-            margin-bottom: 15px;
+            margin-left: 25px;
+            margin-bottom: 20px;
         }
 
         li {
-            margin-bottom: 10px;
-            color: var(--grey-light);
+            margin-bottom: 12px;
         }
 
         .section {
-            margin-bottom: 30px;
-            padding: 20px;
-            background: linear-gradient(135deg, var(--bg-card) 0%, rgba(26, 31, 58, 0.3) 100%);
-            border: 1px solid var(--border-color);
+            margin-bottom: 40px;
+            padding: 30px;
+            background: var(--warm-white);
             border-radius: 8px;
-        }
-
-        .section h3 {
-            margin-top: 0;
+            box-shadow: 0 2px 10px var(--shadow-soft);
         }
 
         .highlight-box {
-            background: linear-gradient(135deg, rgba(125, 43, 232, 0.1) 0%, rgba(0, 217, 255, 0.05) 100%);
-            border-left: 4px solid var(--neon-blue);
-            padding: 20px;
-            margin: 20px 0;
+            background: linear-gradient(135deg, rgba(139, 157, 131, 0.1) 0%, rgba(139, 157, 131, 0.05) 100%);
+            border-left: 4px solid var(--sage);
+            padding: 25px;
+            margin: 30px 0;
             border-radius: 4px;
         }
 
         footer {
-            border-top: 2px solid var(--border-color);
-            padding: 40px 20px;
-            background: rgba(10, 14, 39, 0.9);
-            text-align: center;
-            margin-top: 60px;
-            border-radius: 15px 15px 0 0;
+            border-top: 1px solid var(--light-gray);
+            padding: 60px 20px 40px;
+            background: var(--warm-white);
+            margin-top: 80px;
+        }
+
+        .footer-section {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h4 {
+            color: var(--forest);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            margin: 0;
+        }
+
+        .footer-col a {
+            color: var(--soft-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col a:hover {
+            color: var(--accent-terracotta);
         }
 
         .footer-bottom {
-            color: var(--grey-mid);
-            font-size: 0.85rem;
-        }
-
-        .footer-links {
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--neon-blue);
-            text-decoration: none;
+            border-top: 1px solid var(--light-gray);
+            padding-top: 30px;
+            text-align: center;
+            color: var(--soft-gray);
             font-size: 0.9rem;
-        }
-
-        .footer-links a:hover {
-            text-decoration: underline;
         }
 
         .back-to-top {
@@ -207,9 +201,8 @@
             right: 30px;
             width: 50px;
             height: 50px;
-            background: var(--neon-blue);
-            border: 2px solid var(--neon-blue);
-            color: var(--bg-dark);
+            background: var(--sage);
+            color: var(--warm-white);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -218,8 +211,7 @@
             opacity: 0;
             transition: all 0.3s ease;
             z-index: 100;
-            font-weight: bold;
-            font-size: 1.2rem;
+            box-shadow: 0 4px 15px var(--shadow-medium);
         }
 
         .back-to-top.show {
@@ -227,287 +219,164 @@
         }
 
         .back-to-top:hover {
-            box-shadow: 0 0 20px rgba(0, 217, 255, 0.8);
+            background: var(--forest);
             transform: translateY(-5px);
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.8rem;
-            }
-
-            h2 {
-                font-size: 1.3rem;
-            }
         }
     </style>
 </head>
 <body>
-    <div class="content-wrapper">
-        <header>
-            <h1>Privacy Policy</h1>
-            <div class="breadcrumb">
-                <a href="index.html">Home</a> / Privacy Policy
-            </div>
-        </header>
+    <header>
+        <h1>Privacy Policy</h1>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> / Privacy Policy
+        </div>
+    </header>
 
-        <div class="container">
-            <div class="last-updated">
-                <p><strong>Last Updated: January 2024</strong></p>
-                <p>This Privacy Policy explains how Digital Hub ("we," "us," "our") collects, uses, and protects your information.</p>
-            </div>
-
-            <section>
-                <h2>1. Overview</h2>
-                <p>Digital Hub is committed to protecting your privacy. We've designed our tools to be simple, lightweight, and respectful of your personal data. We do not sell your information to third parties and keep data collection minimal.</p>
-            </section>
-
-            <section class="section">
-                <h3>🔒 Your Privacy Matters</h3>
-                <p>We believe you have the right to know what data we collect, how we use it, and how we protect it. This policy is transparent and easy to understand.</p>
-            </section>
-
-            <section>
-                <h2>2. What Information We Collect</h2>
-                
-                <div class="section">
-                    <h3>A. Information You Voluntarily Provide</h3>
-                    <p>When you contact us through our contact form or email, we collect:</p>
-                    <ul>
-                        <li>Your name</li>
-                        <li>Your email address</li>
-                        <li>Your message content</li>
-                        <li>Any additional information you choose to share</li>
-                    </ul>
-                    <p>This information is only used to respond to your inquiry and is kept confidential.</p>
-                </div>
-
-                <div class="section">
-                    <h3>B. Automatically Collected Information</h3>
-                    <p><strong>Analytics:</strong> We may use analytics tools (like Google Analytics) to understand how visitors use our sites. This helps us improve user experience.</p>
-                    <ul>
-                        <li>Pages visited</li>
-                        <li>Time spent on pages</li>
-                        <li>Referring websites</li>
-                        <li>Browser type and device information</li>
-                        <li>General location (city/region level, not exact)</li>
-                    </ul>
-                    <p><strong>Cookies:</strong> We use cookies and similar technologies for analytics and user preferences. See our <a href="cookies.html" style="color: var(--neon-blue);">Cookie Policy</a> for details.</p>
-                </div>
-
-                <div class="section">
-                    <h3>C. Tool Input Data</h3>
-                    <p>When you use our calculators and tools (tip calculator, bill splitter, etc.), we typically <strong>do not store your data</strong>. These tools work locally in your browser:</p>
-                    <ul>
-                        <li>No information is sent to our servers</li>
-                        <li>No data is permanently stored</li>
-                        <li>All calculations happen on your device</li>
-                    </ul>
-                    <p><em>Note: Some tools may collect anonymized usage data to improve functionality, but personal data is never saved.</em></p>
-                </div>
-            </section>
-
-            <section>
-                <h2>3. How We Use Your Information</h2>
-                
-                <div class="section">
-                    <h3>A. To Provide Our Services</h3>
-                    <p>We use information to operate, maintain, and improve our websites and tools.</p>
-                </div>
-
-                <div class="section">
-                    <h3>B. To Communicate With You</h3>
-                    <p>We may use your email to:</p>
-                    <ul>
-                        <li>Respond to your inquiries and requests</li>
-                        <li>Send confirmations and important updates</li>
-                        <li>Notify you of service changes (if applicable)</li>
-                    </ul>
-                </div>
-
-                <div class="section">
-                    <h3>C. To Analyze and Improve</h3>
-                    <p>We use analytics to understand user behavior and improve our offerings. This data is aggregated and never linked to your identity.</p>
-                </div>
-
-                <div class="section">
-                    <h3>D. Legal Compliance</h3>
-                    <p>We may disclose information when required by law or to protect our legal rights.</p>
-                </div>
-            </section>
-
-            <div class="highlight-box">
-                <strong>✓ What We Don't Do:</strong>
-                <ul style="margin: 10px 0 0 20px;">
-                    <li>Sell your personal data to advertisers or third parties</li>
-                    <li>Share your information without your consent</li>
-                    <li>Use deceptive tracking practices</li>
-                    <li>Store calculator inputs on our servers</li>
-                </ul>
-            </div>
-
-            <section>
-                <h2>4. Data Security</h2>
-                
-                <div class="section">
-                    <h3>A. How We Protect Your Data</h3>
-                    <ul>
-                        <li><strong>HTTPS Encryption:</strong> All data transmitted is encrypted</li>
-                        <li><strong>Secure Servers:</strong> Our servers use industry-standard security protocols</li>
-                        <li><strong>Limited Access:</strong> Only authorized personnel can access user data</li>
-                        <li><strong>Regular Updates:</strong> We keep systems updated with security patches</li>
-                    </ul>
-                </div>
-
-                <div class="section">
-                    <h3>B. Your Responsibilities</h3>
-                    <p>While we take security seriously, no system is 100% secure. Please:</p>
-                    <ul>
-                        <li>Use strong passwords if creating accounts</li>
-                        <li>Never share sensitive information publicly</li>
-                        <li>Keep your browser and devices updated</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section>
-                <h2>5. Third-Party Services</h2>
-                
-                <div class="section">
-                    <p>We may use third-party services for analytics, hosting, and email delivery. These services have their own privacy policies and may collect data as outlined in their terms. We only use reputable services that respect privacy.</p>
-                    <p><strong>Third parties may include:</strong></p>
-                    <ul>
-                        <li>Analytics platforms (Google Analytics, etc.)</li>
-                        <li>Cloud hosting providers</li>
-                        <li>Email service providers</li>
-                        <li>Content delivery networks</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section>
-                <h2>6. Cookies and Tracking</h2>
-                
-                <div class="section">
-                    <p>We use cookies to enhance your experience. See our <a href="cookies.html" style="color: var(--neon-blue);"><strong>Cookie Policy</strong></a> for comprehensive information about:</p>
-                    <ul>
-                        <li>Types of cookies we use</li>
-                        <li>How to manage cookie preferences</li>
-                        <li>Third-party tracking</li>
-                        <li>Your cookie choices</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section>
-                <h2>7. Your Privacy Rights</h2>
-                
-                <div class="section">
-                    <h3>A. Right to Access</h3>
-                    <p>You have the right to request what personal data we have about you.</p>
-                </div>
-
-                <div class="section">
-                    <h3>B. Right to Deletion</h3>
-                    <p>You can request that we delete your personal data (subject to legal obligations).</p>
-                </div>
-
-                <div class="section">
-                    <h3>C. Right to Opt-Out</h3>
-                    <p>You can opt out of non-essential data collection at any time.</p>
-                </div>
-
-                <div class="section">
-                    <h3>D. Right to Correct</h3>
-                    <p>You can request correction of inaccurate information we have about you.</p>
-                </div>
-
-                <p><strong>To exercise any of these rights, contact us at:</strong> <a href="mailto:privacy@digitalhub.com" style="color: var(--neon-blue);">privacy@digitalhub.com</a></p>
-            </section>
-
-            <section>
-                <h2>8. Children's Privacy</h2>
-                
-                <div class="section">
-                    <p>Digital Hub is not intentionally designed for children under 13. We do not knowingly collect data from children under 13. If we discover that we have inadvertently collected such information, we will delete it promptly.</p>
-                    <p>Parents or guardians concerned about a child's privacy can contact us at <a href="mailto:privacy@digitalhub.com" style="color: var(--neon-blue);">privacy@digitalhub.com</a></p>
-                </div>
-            </section>
-
-            <section>
-                <h2>9. Data Retention</h2>
-                
-                <div class="section">
-                    <p>We retain personal data only as long as necessary to serve you:</p>
-                    <ul>
-                        <li><strong>Contact Form Data:</strong> Retained for 1-2 years for reference and support purposes</li>
-                        <li><strong>Analytics Data:</strong> Typically retained for 12-24 months</li>
-                        <li><strong>Cookie Data:</strong> Depends on cookie type (see Cookie Policy)</li>
-                        <li><strong>Tool Input Data:</strong> Not retained (processed locally on your device)</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section>
-                <h2>10. Changes to This Privacy Policy</h2>
-                
-                <div class="section">
-                    <p>We may update this Privacy Policy periodically to reflect changes in our practices, technology, legal requirements, or other factors. We will notify you of significant changes by updating the "Last Updated" date at the top of this page.</p>
-                    <p>Your continued use of Digital Hub following the posting of revised Privacy Policy means you accept and agree to the changes.</p>
-                </div>
-            </section>
-
-            <section>
-                <h2>11. Contact Us</h2>
-                
-                <div class="section">
-                    <p>If you have questions about this Privacy Policy or how we handle your data:</p>
-                    <ul>
-                        <li><strong>Email:</strong> <a href="mailto:privacy@digitalhub.com" style="color: var(--neon-blue);">privacy@digitalhub.com</a></li>
-                        <li><strong>General Contact:</strong> <a href="contact.html" style="color: var(--neon-blue);">Use our contact form</a></li>
-                        <li><strong>Mailing Address:</strong> [Your Address Here]</li>
-                    </ul>
-                </div>
-            </section>
-
-            <div class="highlight-box">
-                <strong>⚖️ Legal Notice:</strong> This Privacy Policy complies with GDPR, CCPA, and other major privacy regulations. We are committed to protecting your rights and respecting your privacy.
-            </div>
+    <div class="container">
+        <div class="last-updated">
+            <p><strong>Last Updated: January 2024</strong></p>
+            <p>This Privacy Policy explains how Daily Help Hub ("we," "us," "our") collects, uses, and protects your information.</p>
         </div>
 
-        <footer>
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-                <a href="privacy.html">Privacy</a>
-                <a href="terms.html">Terms</a>
-                <a href="cookies.html">Cookies</a>
+        <section>
+            <h2>1. Overview</h2>
+            <p>Daily Help Hub is committed to protecting your privacy. We've designed our tools to be simple, lightweight, and respectful of your personal data. We do not sell your information to third parties and keep data collection minimal.</p>
+        </section>
+
+        <div class="section">
+            <h3>🔒 Your Privacy Matters</h3>
+            <p>We believe you have the right to know what data we collect, how we use it, and how we protect it. This policy is transparent and easy to understand.</p>
+        </div>
+
+        <section>
+            <h2>2. What Information We Collect</h2>
+            
+            <div class="section">
+                <h3>A. Information You Voluntarily Provide</h3>
+                <p>When you contact us through our contact form or email, we collect:</p>
+                <ul>
+                    <li>Your name</li>
+                    <li>Your email address</li>
+                    <li>Your message content</li>
+                    <li>Any additional information you choose to share</li>
+                </ul>
+                <p>This information is only used to respond to your inquiry and is kept confidential.</p>
+            </div>
+
+            <div class="section">
+                <h3>B. Automatically Collected Information</h3>
+                <p><strong>Analytics:</strong> We may use analytics tools (like Google Analytics) to understand how visitors use our sites.</p>
+                <ul>
+                    <li>Pages visited</li>
+                    <li>Time spent on pages</li>
+                    <li>Referring websites</li>
+                    <li>Browser type and device information</li>
+                    <li>General location (city/region level, not exact)</li>
+                </ul>
+                <p><strong>Cookies:</strong> We use cookies for analytics and user preferences. See our <a href="cookies.html" style="color: var(--accent-terracotta);">Cookie Policy</a> for details.</p>
+            </div>
+
+            <div class="section">
+                <h3>C. Tool Input Data</h3>
+                <p>When you use our calculators and tools, we typically <strong>do not store your data</strong>. These tools work locally in your browser:</p>
+                <ul>
+                    <li>No information is sent to our servers</li>
+                    <li>No data is permanently stored</li>
+                    <li>All calculations happen on your device</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="highlight-box">
+            <strong>✓ What We Don't Do:</strong>
+            <ul style="margin: 10px 0 0 20px;">
+                <li>Sell your personal data to advertisers or third parties</li>
+                <li>Share your information without your consent</li>
+                <li>Use deceptive tracking practices</li>
+                <li>Store calculator inputs on our servers</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2>3. How We Use Your Information</h2>
+            
+            <div class="section">
+                <h3>A. To Provide Our Services</h3>
+                <p>We use information to operate, maintain, and improve our websites and tools.</p>
+            </div>
+
+            <div class="section">
+                <h3>B. To Communicate With You</h3>
+                <p>We may use your email to:</p>
+                <ul>
+                    <li>Respond to your inquiries and requests</li>
+                    <li>Send confirmations and important updates</li>
+                    <li>Notify you of service changes (if applicable)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>4. Your Privacy Rights</h2>
+            <div class="section">
+                <p>You have the right to:</p>
+                <ul>
+                    <li>Request what personal data we have about you</li>
+                    <li>Request deletion of your personal data</li>
+                    <li>Opt out of non-essential data collection</li>
+                    <li>Request correction of inaccurate information</li>
+                </ul>
+                <p><strong>To exercise these rights, contact us at:</strong> <a href="mailto:privacy@dailyhelphub.com" style="color: var(--accent-terracotta);">privacy@dailyhelphub.com</a></p>
+            </div>
+        </section>
+
+        <section>
+            <h2>5. Contact Us</h2>
+            <div class="section">
+                <p>If you have questions about this Privacy Policy:</p>
+                <ul>
+                    <li><strong>Email:</strong> <a href="mailto:privacy@dailyhelphub.com" style="color: var(--accent-terracotta);">privacy@dailyhelphub.com</a></li>
+                    <li><strong>Contact Form:</strong> <a href="contact.html" style="color: var(--accent-terracotta);">Use our contact page</a></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-section">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy</a></li>
+                        <li><a href="terms.html">Terms</a></li>
+                        <li><a href="cookies.html">Cookies</a></li>
+                    </ul>
+                </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Digital Hub. All rights reserved.</p>
+                <p>&copy; 2024 Daily Help Hub. All rights reserved.</p>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
 
     <div class="back-to-top" id="backToTop">↑</div>
 
     <script>
         const backToTopButton = document.getElementById('backToTop');
-        
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.add('show');
-            } else {
-                backToTopButton.classList.remove('show');
-            }
+            backToTopButton.classList.toggle('show', window.pageYOffset > 300);
         });
-
         backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
 </body>
